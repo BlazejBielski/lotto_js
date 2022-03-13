@@ -49,7 +49,7 @@ playRef.addEventListener('click', () => {
                     const drawnDigits = drawDigits(digits.length);
                     const hits = checkHits(digits, drawnDigits);
                     //showResults(hits)
-                    showResults(hits)
+                    console.log(hits)
                 } else {
                     console.log('Some digits are redundant')
                 }
@@ -66,20 +66,3 @@ playRef.addEventListener('click', () => {
     }
 })
 console.log(digitsRef);
-
-function oneHundredMillionsGames() {
-    const userDigits = [25, 21, 8, 4, 18, 37]
-
-    let counter = 0
-
-    for (let i=0; i < 100000000; i++) {
-        const drawn = drawDigits(amount 6);
-        const hits  = checkHits(userDigits, drawn);
-        if (hits.lenght === 6) {
-            counter++;
-            console.log(i, 'times')
-
-        }
-    }
-    console.log(`Wygrałeś ${counter}. Wygrana ${-100000000 * 3 +(counter * 3000000)}`)   
-}

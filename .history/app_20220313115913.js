@@ -16,7 +16,7 @@ const isNotRedundant = (digits) => digits.every((digit, id, array) => !array.inc
 
 const drawDigits = (amount) => {
     const temp = [];
-    while (temp.length < amount) {
+    while (temp.length <= amount) {
         const digit = randInt(1, 49)
         if (!temp.includes(digit)) {
             temp.push(digit)
@@ -38,48 +38,34 @@ const showResults = (hits) => {
 }
 
 
-playRef.addEventListener('click', () => {
+playRef.addEventListener('click', () =>{
     const digitsText = [...digitsRef].map((input) => input.value);
-
-    if (isNotEmpty(digitsText)) {
-        if (isDigits(digitsText)) {
+    if (isNotEmpty(digitsText)){
+        if (isDigits(digitsText)){
             const digits = digitsText.map((item) => parseInt(item))
             if (isInRange(digits)) {
-                if (isNotRedundant(digits)) {
-                    const drawnDigits = drawDigits(digits.length);
+                if (isNotRedundant(digits)){
+
+                    const drawnDigits = drawDigits(digits.lenght);
                     const hits = checkHits(digits, drawnDigits);
-                    //showResults(hits)
-                    showResults(hits)
-                } else {
-                    console.log('Some digits are redundant')
+                    console.log(hits)
+                }
+                
+                    else {
+                        console.log('Some digit are redundant')
+                    }
                 }
 
-            } else {
-                console.log('Some digits are out of range 1-49')
+    
+            else {
+                console.log('All digits must be in range 1 to 49');
             }
-
+            
         } else {
-            console.log('Not all inputs are digits')
+            console.log('Not all inputs are digits');
         }
-    } else {
+    }else{
         console.log('Fill all digits');
     }
-})
+});
 console.log(digitsRef);
-
-function oneHundredMillionsGames() {
-    const userDigits = [25, 21, 8, 4, 18, 37]
-
-    let counter = 0
-
-    for (let i=0; i < 100000000; i++) {
-        const drawn = drawDigits(amount 6);
-        const hits  = checkHits(userDigits, drawn);
-        if (hits.lenght === 6) {
-            counter++;
-            console.log(i, 'times')
-
-        }
-    }
-    console.log(`Wygrałeś ${counter}. Wygrana ${-100000000 * 3 +(counter * 3000000)}`)   
-}

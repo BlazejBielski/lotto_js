@@ -77,9 +77,8 @@ function oneHundredMillionsGames() {
         const hits  = checkHits(userDigits, drawn);
         if (hits.lenght === 6) {
             counter++;
-            console.log(i, 'times')
+            console.log
 
         }
     }
-    console.log(`Wygrałeś ${counter}. Wygrana ${-100000000 * 3 +(counter * 3000000)}`)   
 }

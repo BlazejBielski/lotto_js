@@ -81,5 +81,5 @@ function oneHundredMillionsGames() {
 
         }
     }
-    console.log(`Wygrałeś ${counter}. Wygrana ${-100000000 * 3 +(counter * 3000000)}`)   
+    console.log(`Wygrałeś ${counter}. Wygrana $`)   
 }
